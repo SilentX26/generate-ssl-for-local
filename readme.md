@@ -10,6 +10,44 @@ Alur penggunaan:
 1. Jalankan `generate-ca.sh` sekali untuk membuat CA.
 2. Jalankan `generate-cert.sh` setiap kali ingin membuat cert domain baru.
 
+## Daftar Isi
+
+- [Akses via curl](#akses-via-curl)
+- [Prasyarat](#prasyarat)
+- [Buat Root CA (Sekali Saja)](#buat-root-ca-sekali-saja)
+- [Buat Sertifikat Domain](#buat-sertifikat-domain)
+- [Input Interaktif](#input-interaktif)
+  - [Pass Phrase Behavior](#pass-phrase-behavior)
+- [SAN (Subject Alternative Name)](#san-subject-alternative-name)
+- [Lokasi Output](#lokasi-output)
+- [File Output](#file-output)
+  - [Mode 1: Nama sertifikat berdasarkan domain = y](#mode-1-nama-sertifikat-berdasarkan-domain--y)
+  - [Mode 2: Nama sertifikat berdasarkan domain = N (default)](#mode-2-nama-sertifikat-berdasarkan-domain--n-default)
+- [Git Ignore](#git-ignore)
+
+## Akses via curl
+
+Script bisa langsung diunduh dan dijalankan tanpa clone repo:
+
+```bash
+# Download generate-ca.sh
+curl -fsSL https://raw.githubusercontent.com/cuytamvan/generate-ssl-for-local/main/generate-ca.sh -o generate-ca.sh
+
+# Download generate-cert.sh
+curl -fsSL https://raw.githubusercontent.com/cuytamvan/generate-ssl-for-local/main/generate-cert.sh -o generate-cert.sh
+
+# Beri permission eksekusi
+chmod +x generate-ca.sh generate-cert.sh
+```
+
+Atau langsung jalankan tanpa menyimpan file:
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/cuytamvan/generate-ssl-for-local/main/generate-ca.sh)
+
+bash <(curl -fsSL https://raw.githubusercontent.com/cuytamvan/generate-ssl-for-local/main/generate-cert.sh)
+```
+
 ## Prasyarat
 
 - `openssl` sudah terpasang.
