@@ -1,0 +1,12 @@
+# This .gitignore file is used to ignore generated files and sensitive information related to SSL certificate creation.
+ca.pem
+ca-key.pem
+cert.csr
+ca.srl
+
+# Ignore generated files and sensitive information related to SSL certificate creation
+generated/
+
+
+# Ignore any files that may contain sensitive information such as passwords or private keys
+password.txt
